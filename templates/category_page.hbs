@@ -31,23 +31,46 @@
 
       <div id="main-content" class="section-tree">
         {{#each sections}}
-          <section class="section">
-            <!--Images for categories - category Page -->
-            {{#is id 27090066506908}}<img
-                class=""
-                src="{{asset 'hardware.svg'}}"
-                alt="ikon til hardware"
-              />{{/is}}
-            {{#is id 27088171724828}}<img
-                class=""
-                src="{{asset 'komGodtIGang.svg'}}"
-                alt="ikon til kom godt i gang"
-              />{{/is}}
-            <!--End images for categories -->
-            <h2 class="section-tree-title">
-              <a href="{{url}}">{{name}}</a>
-            </h2>
-            {{!--{{#if articles}}
+          <a href="{{url}}">
+            <section class="section">
+              <!--Images for categories - category Page -->
+              {{#is id 27090066506908}}<img
+                  class="category-icon"
+                  src="{{asset 'hardware.svg'}}"
+                  alt="ikon til hardware"
+                />{{/is}}
+              {{#is id 27088171724828}}<img
+                  class="category-icon"
+                  src="{{asset 'komGodtIGang.svg'}}"
+                  alt="ikon til kom godt i gang"
+                />{{/is}}{{#is id 27088218679452}}<img
+                  class="category-icon"
+                  src="{{asset 'administrator.svg'}}"
+                  alt="ikon til arrangørkonto"
+                />{{/is}}
+              {{#is id 27088219507996}}<img
+                  class="category-icon"
+                  src="{{asset 'GDPR.svg'}}"
+                  alt="ikon til GDPR"
+                />{{/is}}{{#is id 27088243446556}}<img
+                  class="category-icon"
+                  src="{{asset 'deltager.svg'}}"
+                  alt="ikon til deltager"
+                />{{/is}}
+              {{#is id 27088259930652}}<img
+                  class="category-icon"
+                  src="{{asset 'billet.svg'}}"
+                  alt="ikon til billet"
+                />{{/is}}{{#is id 27088236910236}}<img
+                  class="category-icon"
+                  src="{{asset 'okonomi.svg'}}"
+                  alt="ikon til Økonomi"
+                />{{/is}}
+              <!--End images for categories -->
+              <h2 class="section-tree-title">
+                {{name}}
+              </h2>
+              {{!--{{#if articles}}
               <ul class="article-list">
                 {{#each articles}}
                   <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
@@ -72,7 +95,9 @@
                 </a>
               {{/if}}
             {{/if}}--}}
-          </section>
+            </section>
+          </a>
+
         {{/each}}
       </div>
     </div>
