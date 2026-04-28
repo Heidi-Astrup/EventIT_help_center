@@ -32,10 +32,18 @@
       <div id="main-content" class="section-tree">
         {{#each sections}}
           <section class="section">
-            <img
-              src="https://community.zendesk.com/members/anonymous11-6180"
-              alt="test image"
-            />
+            <!--Images for categories - category Page -->
+            {{#is id 27090066506908}}<img
+                class=""
+                src="{{asset 'hardware.svg'}}"
+                alt="ikon til hardware"
+              />{{/is}}
+            {{#is id 27088171724828}}<img
+                class=""
+                src="{{asset 'komGodtIGang.svg'}}"
+                alt="ikon til kom godt i gang"
+              />{{/is}}
+            <!--End images for categories -->
             <h2 class="section-tree-title">
               <a href="{{url}}">{{name}}</a>
             </h2>
