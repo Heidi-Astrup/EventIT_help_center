@@ -1,7 +1,7 @@
 <h1 class="visibility-hidden">{{ help_center.name }}</h1>
 
 <h1>Event IT Help Center - Hej verden - det virker!!! Lets goo nu er jeg med</h1>
-<p>Vi bygger dette fra bunden jeg hedder </p>
+<p>Vi bygger dette fra bunden ja tak 🚀</p>
 
 <section id="main-content" class="section hero">
   <div class="hero-inner">
@@ -46,19 +46,39 @@
 
     <section class="articles two-columns">
       <div class="articles-column">
-        <h3>Mest læste artikler inden for Medlemssystem</h3>
+        <h3>Medlemssystemet</h3>
         <ul class="article-list most-read">
           {{#each most_read_members_articles}}
-            <li>{{title}}</li>
+            <li class="article-item">
+              <a href="{{url}}">
+                {{title}}
+                {{#if internal}}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+                    <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+                    <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+                  </svg>
+                {{/if}}
+              </a>
+            </li>
           {{/each}}
         </ul>
       </div>
 
       <div class="articles-column">
-        <h3>Mest læste artikler inden for Eventssystem</h3>
+        <h3>Eventssystemet</h3>
         <ul class="article-list most-read">
           {{#each most_read_events_articles}}
-            <li>{{title}}</li>
+            <li class="article-item">
+              <a href="{{url}}">
+                {{title}}
+                {{#if internal}}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+                    <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+                    <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+                  </svg>
+                {{/if}}
+              </a>
+            </li>
           {{/each}}
         </ul>
       </div>
@@ -98,9 +118,11 @@
   {{/if}}
 
 
+{{!--
   <section class="section home-section activity">
     {{#if settings.show_recent_activity}}
       {{recent_activity}}
     {{/if}}
   </section>
 </div>
+--}}
