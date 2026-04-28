@@ -3,9 +3,17 @@
   <div class="sub-nav">
     {{breadcrumbs}}
     <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="12"
+        height="12"
+        focusable="false"
+        viewBox="0 0 12 12"
+        class="search-icon"
+        aria-hidden="true"
+      >
+        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
       </svg>
       {{search scoped=settings.scoped_kb_search submit=false}}
     </div>
@@ -15,18 +23,23 @@
     <div class="category-content">
       <header class="page-header">
         <h1>{{category.name}}</h1>
-        {{#if category.description}}
+        {{!--{{#if category.description}}
           <p class="page-header-description">{{category.description}}</p>
-        {{/if}}
+        {{/if}}--}}
       </header>
+      <p>Vælg den kategori du har brug for hjælp inden for</p>
 
       <div id="main-content" class="section-tree">
         {{#each sections}}
           <section class="section">
+            <img
+              src="https://community.zendesk.com/members/anonymous11-6180"
+              alt="test image"
+            />
             <h2 class="section-tree-title">
               <a href="{{url}}">{{name}}</a>
             </h2>
-            {{#if articles}}
+            {{!--{{#if articles}}
               <ul class="article-list">
                 {{#each articles}}
                   <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
@@ -50,7 +63,7 @@
                   {{t 'show_all_articles' count=article_count}}
                 </a>
               {{/if}}
-            {{/if}}
+            {{/if}}--}}
           </section>
         {{/each}}
       </div>

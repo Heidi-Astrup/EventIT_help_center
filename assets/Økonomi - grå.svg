@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_1" data-name="Lag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 370">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f1f1f1;
+        stroke-miterlimit: 10;
+        stroke-width: 13px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M22.01,86.84h345.98c5.56,0,10.06,4.93,10.06,11.01v208.42c0,6.08-4.5,11.01-10.06,11.01H22.01c-5.56,0-10.06-4.93-10.06-11.01V97.85c0-6.08,4.5-11.01,10.06-11.01Z"/>
+  <line class="cls-1" x1="9.51" y1="133.61" x2="375.09" y2="133.61"/>
+  <line class="cls-1" x1="40.92" y1="181.31" x2="192.3" y2="181.31"/>
+  <line class="cls-1" x1="40.92" y1="219.83" x2="305.08" y2="219.83"/>
+  <line class="cls-1" x1="82.66" y1="269.82" x2="124.39" y2="269.82"/>
+  <circle class="cls-1" cx="57.43" cy="269.82" r="5.96"/>
+  <line class="cls-1" x1="140.67" y1="269.82" x2="182.4" y2="269.82"/>
+  <line class="cls-1" x1="198.68" y1="269.82" x2="240.41" y2="269.82"/>
+  <line class="cls-1" x1="256.7" y1="269.82" x2="298.43" y2="269.82"/>
+</svg>

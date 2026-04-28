@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_1" data-name="Lag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 370">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f1f1f1;
+        stroke-miterlimit: 10;
+        stroke-width: 13px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M361.34,363.07c2.37,0,4.26-1.96,4.2-4.33-2.51-97.1-85.07-173.26-177.94-169.03-87.29,3.98-160.01,77.91-162.16,169.04-.06,2.36,1.84,4.32,4.2,4.32h331.71Z"/>
+  <circle class="cls-1" cx="195.49" cy="84.33" r="77.41"/>
+  <polyline class="cls-1" points="159.91 192.52 171.07 219.43 172.94 223.94 214.89 225.16 229.98 192.52"/>
+  <line class="cls-1" x1="159.91" y1="363.07" x2="174.41" y2="224.07"/>
+  <line class="cls-1" x1="215.08" y1="221.59" x2="229.98" y2="363.07"/>
+</svg>
