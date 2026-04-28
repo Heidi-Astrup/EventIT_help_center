@@ -1691,6 +1691,10 @@ ul {
 }
 
 /***** Category pages *****/
+.category-icon {
+  width: 70px;
+}
+
 /*.category-container {
   display: flex;
   justify-content: flex-end;
@@ -1719,10 +1723,11 @@ ul {
 }
 .section-tree .section {
   flex: initial;
-  max-width: 30%;
+  max-width: 100%;
+  min-width: 300px;
   text-align: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
   border: 2px solid #e35b66;
   border-radius: 15px;
   background-color: #002238;
