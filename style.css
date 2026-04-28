@@ -1466,7 +1466,7 @@ ul {
 }
 .blocks-item-link {
   color: $brand_color;
-  padding: 50px 30px;
+  padding: 90px 30px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1505,7 +1505,7 @@ ul {
   padding: 10px 20px;
   justify-content: flex-start;
   height: auto;
-  min-height: 0;
+  max-height: 30px;
 }
 
 /* Mere specifik selector for at sikre at modifieren ikke overskrives */
