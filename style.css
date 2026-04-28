@@ -1435,6 +1435,11 @@ ul {
     margin: 0 15px 30px;
   }
 }
+@media (min-width: 1024px) {
+  .blocks-item {
+    flex: 1 0 calc(50% - 30px);
+  }
+}
 .blocks-item:hover,
 .blocks-item:focus,
 .blocks-item:active {
@@ -1461,12 +1466,17 @@ ul {
 }
 .blocks-item-link {
   color: $brand_color;
-  padding: 20px 30px;
+  padding: 90px 30px;
   display: flex;
   flex-direction: column;
   flex: 1;
   justify-content: center;
   border-radius: inherit;
+}
+.blocks-item-link.block-item-link--full,
+.blocks-item-link.blocks-item-link--full {
+  padding: 10px 20px; /* mindre padding for lavere højde */
+  justify-content: flex-start; /* placér indholdet øverst */
 }
 .blocks-item-link:visited,
 .blocks-item-link:hover,
@@ -1488,6 +1498,23 @@ ul {
 }
 .blocks-item-description:not(:empty) {
   margin-top: 10px;
+}
+
+.block-item-link--full {
+  /* understøtter den eksisterende (forkerte) classname hvis den bruges alene */
+  padding: 10px 20px;
+  justify-content: flex-start;
+  height: auto;
+  max-height: 30px;
+}
+
+/* Mere specifik selector for at sikre at modifieren ikke overskrives */
+.blocks-item > a.blocks-item-link.block-item-link--full,
+.blocks-item > a.block-item-link--full {
+  padding: 10px 20px;
+  justify-content: flex-start;
+  height: auto;
+  min-height: 0;
 }
 
 /***** Homepage *****/
