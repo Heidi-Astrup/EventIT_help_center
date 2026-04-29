@@ -1492,6 +1492,13 @@ ul {
   margin: 0 0 30px;
   max-width: 100%;
   text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.blocks-item:hover {
+  transform: translateY(-15px);
 }
 
 .system-icon {
@@ -1535,7 +1542,7 @@ ul {
 }
 .blocks-item-link {
   background-color: $brand_color;
-  padding: 90px 30px;
+  padding: 50px 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
