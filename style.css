@@ -1122,20 +1122,21 @@ ul {
 
 /***** Footer *****/
 .footer {
-  border-top: 1px solid #ddd;
-  margin-top: 60px;
+  margin-top: 8%;
+  padding-top: 30px;
   padding: 30px 0;
-  background-color: $text_color;
+  background: $brand_color;
 }
 .footer a {
-  color: #f1f1f1;
+  color: $brand_text_color;
+  text-decoration: none;
 }
 .footer-inner {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 0 5%;
   display: flex;
   justify-content: space-between;
+  padding-top: 30px;
 }
 @media (min-width: 1160px) {
   .footer-inner {
@@ -1148,9 +1149,72 @@ ul {
   display: inline-block;
 }
 
+/* Footer layout helpers */
+.footer-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.footer-links a {
+  color: lighten($text_color, 30%);
+  font-size: 15px;
+}
+.footer-divider {
+  max-width: 1160px;
+  justify-self: center;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 18px 0;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  color: lighten($text_color, 20%);
+  font-size: 14px;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.follow-label {
+  color: lighten($text_color, 20%);
+  margin-right: 8px;
+}
+.social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #042939;
+  text-decoration: none;
+}
+.social::before {
+  /* Placeholder icon style — replace with svg/bg-image if available */
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: currentColor;
+  border-radius: 2px;
+  opacity: 0.95;
+}
+
 .powered-by-zendesk a,
 .powered-by-zendesk a:visited {
   color: lighten($text_color, 20%);
+}
+
+.powered-by-zendesk {
+  color: lighten($text_color, 20%);
+  font-size: 13px;
+  margin-left: 12px;
 }
 
 /***** Breadcrumbs *****/
