@@ -1214,7 +1214,6 @@ ul {
 .powered-by-zendesk {
   color: lighten($text_color, 20%);
   font-size: 13px;
-  margin-left: 12px;
 }
 
 /***** Breadcrumbs *****/
