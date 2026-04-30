@@ -73,5 +73,7 @@
   "text_font_description": "Font for body text",
   "text_font_label": "Text Font",
   "visited_link_color_description": "Text colour for visited link elements",
-  "visited_link_color_label": "Visited link colour"
+  "visited_link_color_label": "Visited link colour",
+  "formular_tekst": "Do you have feedback for the Event IT Help Center? We would very much like to hear from you. The information you enter in the form is processed by our external system providers for the purpose of customer service as well as the development and improvement of our services. By using the form, you consent to this processing of your data.",
+  "hej": "hej verden"
 }
