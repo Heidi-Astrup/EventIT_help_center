@@ -1,5 +1,5 @@
 (function () {
-  'use strict';
+  "use strict";
 
   // Key map
   const ENTER = 13;
@@ -37,12 +37,12 @@
 
     // Toggles expanded aria to collapsible elements
     const collapsible = document.querySelectorAll(
-      ".collapsible-nav, .collapsible-sidebar"
+      ".collapsible-nav, .collapsible-sidebar",
     );
 
     collapsible.forEach((element) => {
       const toggle = element.querySelector(
-        ".collapsible-nav-toggle, .collapsible-sidebar-toggle"
+        ".collapsible-nav-toggle, .collapsible-sidebar-toggle",
       );
 
       element.addEventListener("click", () => {
@@ -59,7 +59,7 @@
 
     // If multibrand search has more than 5 help centers or categories collapse the list
     const multibrandFilterLists = document.querySelectorAll(
-      ".multibrand-filter-list"
+      ".multibrand-filter-list",
     );
     multibrandFilterLists.forEach((filter) => {
       if (filter.children.length > 6) {
@@ -93,7 +93,10 @@
     this.toggle.addEventListener("click", this.clickHandler.bind(this));
     this.toggle.addEventListener("keydown", this.toggleKeyHandler.bind(this));
     this.menu.addEventListener("keydown", this.menuKeyHandler.bind(this));
-    document.body.addEventListener("click", this.outsideClickHandler.bind(this));
+    document.body.addEventListener(
+      "click",
+      this.outsideClickHandler.bind(this),
+    );
 
     const toggleId = this.toggle.getAttribute("id") || crypto.randomUUID();
     const menuId = this.menu.getAttribute("id") || crypto.randomUUID();
@@ -132,7 +135,7 @@
 
     get menuItems() {
       return Array.prototype.slice.call(
-        this.menu.querySelectorAll("[role='menuitem'], [role='menuitemradio']")
+        this.menu.querySelectorAll("[role='menuitem'], [role='menuitemradio']"),
       );
     },
 
@@ -218,7 +221,7 @@
       char = char.toLowerCase();
 
       const itemChars = this.menuItems.map((menuItem) =>
-        menuItem.textContent.trim()[0].toLowerCase()
+        menuItem.textContent.trim()[0].toLowerCase(),
       );
 
       const startIndex =
@@ -470,7 +473,7 @@
     const form = event.target.closest(searchFormSelector);
     form.classList.toggle(
       searchFormFilledClassName,
-      event.target.value.length > 0
+      event.target.value.length > 0,
     );
   }, 200);
 
@@ -480,7 +483,7 @@
     // Set up clear functionality for the search field
     const searchForms = [...document.querySelectorAll(searchFormSelector)];
     const searchInputs = searchForms.map((form) =>
-      form.querySelector("input[type='search']")
+      form.querySelector("input[type='search']"),
     );
     searchInputs.forEach((input) => {
       appendClearSearchButton(input, input.closest(searchFormSelector));
@@ -513,10 +516,10 @@
 
     // show form controls when the textarea receives focus or back button is used and value exists
     const commentContainerTextarea = document.querySelector(
-      ".comment-container textarea"
+      ".comment-container textarea",
     );
     const commentContainerFormControls = document.querySelector(
-      ".comment-form-controls, .comment-ccs"
+      ".comment-form-controls, .comment-ccs",
     );
 
     if (commentContainerTextarea) {
@@ -526,9 +529,9 @@
           commentContainerFormControls.style.display = "block";
           commentContainerTextarea.removeEventListener(
             "focus",
-            focusCommentContainerTextarea
+            focusCommentContainerTextarea,
           );
-        }
+        },
       );
 
       if (commentContainerTextarea.value !== "") {
@@ -538,13 +541,13 @@
 
     // Expand Request comment form when Add to conversation is clicked
     const showRequestCommentContainerTrigger = document.querySelector(
-      ".request-container .comment-container .comment-show-container"
+      ".request-container .comment-container .comment-show-container",
     );
     const requestCommentFields = document.querySelectorAll(
-      ".request-container .comment-container .comment-fields"
+      ".request-container .comment-container .comment-fields",
     );
     const requestCommentSubmit = document.querySelector(
-      ".request-container .comment-container .request-submit-comment"
+      ".request-container .comment-container .request-submit-comment",
     );
 
     if (showRequestCommentContainerTrigger) {
@@ -563,13 +566,13 @@
 
     // Mark as solved button
     const requestMarkAsSolvedButton = document.querySelector(
-      ".request-container .mark-as-solved:not([data-disabled])"
+      ".request-container .mark-as-solved:not([data-disabled])",
     );
     const requestMarkAsSolvedCheckbox = document.querySelector(
-      ".request-container .comment-container input[type=checkbox]"
+      ".request-container .comment-container input[type=checkbox]",
     );
     const requestCommentSubmitButton = document.querySelector(
-      ".request-container .comment-container input[type=submit]"
+      ".request-container .comment-container input[type=submit]",
     );
 
     if (requestMarkAsSolvedButton) {
@@ -583,7 +586,7 @@
 
     // Change Mark as solved text according to whether comment is filled
     const requestCommentTextarea = document.querySelector(
-      ".request-container .comment-container textarea"
+      ".request-container .comment-container textarea",
     );
 
     const usesWysiwyg =
@@ -613,7 +616,7 @@
           if (requestMarkAsSolvedButton) {
             requestMarkAsSolvedButton.innerText =
               requestMarkAsSolvedButton.getAttribute(
-                "data-solve-and-submit-translation"
+                "data-solve-and-submit-translation",
               );
           }
         }
@@ -621,7 +624,7 @@
     }
 
     const selects = document.querySelectorAll(
-      "#request-status-select, #request-organization-select"
+      "#request-status-select, #request-organization-select",
     );
 
     selects.forEach((element) => {
@@ -646,7 +649,7 @@
 
     // Submit organization form in the request page
     const requestOrganisationSelect = document.querySelector(
-      "#request-organization select"
+      "#request-organization select",
     );
 
     if (requestOrganisationSelect) {
@@ -670,5 +673,46 @@
       notificationElm.previousElementSibling.focus();
     }
   });
-
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const content = document.querySelector(".article-body");
+  const toc = document.getElementById("toc");
+
+  if (!content || !toc) return;
+
+  let headings = content.querySelectorAll("h2, h3");
+
+  // 🔥 Fjern dubletter (Zendesk renderer nogle gange flere gange)
+  const seen = new Set();
+  headings = Array.from(headings).filter((h) => {
+    if (seen.has(h.id)) return false;
+    seen.add(h.id);
+    return true;
+  });
+
+  // 🔥 Fjern uønskede Zendesk headings
+  headings = headings.filter((h) => {
+    return !h.closest(".article-votes, .comments, .recent-articles");
+  });
+
+  if (headings.length < 2) {
+    toc.style.display = "none";
+    return;
+  }
+
+  headings.forEach((heading) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.href = "#" + heading.id;
+    a.textContent = heading.textContent;
+
+    if (heading.tagName === "H3") {
+      li.style.marginLeft = "15px";
+    }
+
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+});
