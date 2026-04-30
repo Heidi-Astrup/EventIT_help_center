@@ -1128,7 +1128,7 @@ ul {
   background: $brand_color;
 }
 .footer a {
-  color: $brand_text_color;
+  color: $text_color;
   text-decoration: none;
 }
 .footer-inner {
@@ -1145,7 +1145,7 @@ ul {
   }
 }
 .footer-language-selector button {
-  color: lighten($text_color, 20%);
+  color: $brand_color;
   display: inline-block;
 }
 
@@ -1156,14 +1156,13 @@ ul {
   align-items: center;
 }
 .footer-links a {
-  color: lighten($text_color, 30%);
+  color: $brand_text_color;
   font-size: 15px;
 }
 .footer-divider {
   max-width: 1160px;
   justify-self: center;
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(191, 178, 178, 0.842);
   margin: 18px 0;
 }
 .footer-bottom {
@@ -1172,7 +1171,7 @@ ul {
   align-items: center;
 }
 .footer-copy {
-  color: lighten($text_color, 20%);
+  color: $brand_text_color;
   font-size: 14px;
 }
 .footer-social {
@@ -1181,7 +1180,7 @@ ul {
   gap: 10px;
 }
 .follow-label {
-  color: lighten($text_color, 20%);
+  color: $brand_text_color;
   margin-right: 8px;
 }
 .social {
