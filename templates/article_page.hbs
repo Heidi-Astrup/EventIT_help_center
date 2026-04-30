@@ -11,41 +11,6 @@
     </div>
   </div>
 
-  <div class="article-container" id="article-container">
-    <aside class="article-sidebar" aria-labelledby="section-articles-title">
-      {{#if settings.show_articles_in_section}}
-        <div class="collapsible-sidebar">
-          <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="section-articles-title" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
-              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
-            </svg>
-          </button>
-          <span id="section-articles-title" class="collapsible-sidebar-title sidenav-title">
-            {{t 'articles_in_section'}}
-          </span>
-          <div class="collapsible-sidebar-body">
-            <ul>
-              {{#each section.articles}}
-                <li>
-                  <a href="{{url}}" 
-                     class="sidenav-item {{#is id ../article.id}}current-article{{/is}}"
-                     {{#is id ../article.id}}aria-current="page"{{/is}}>
-                       {{title}}
-                  </a>
-                </li>
-              {{/each}}
-            </ul>
-            {{#if section.more_articles}}
-              <a href="{{section.url}}" class="article-sidebar-item">{{t 'see_more'}}</a>
-            {{/if}}
-          </div>
-        </div>
-      {{/if}}
-    </aside>
-
     <article id="main-content" class="article">
       <header class="article-header">
         <h1 title="{{article.title}}" class="article-title">
@@ -58,7 +23,7 @@
           {{/if}}
         </h1>
 
-        <div class="article-author">
+  {{!--      <div class="article-author">
           {{#if settings.show_article_author}}
             <div class="avatar article-avatar">
               {{#if article.author.agent}}
@@ -74,8 +39,16 @@
               {{#link 'user_profile' id=article.author.id}}
                 {{article.author.name}}
               {{/link}}
-            {{/if}}
+            {{/if}} 
+    --}}
 
+    <div class="article-layout">
+  <aside class="toc-container">
+    <h3>Indhold</h3>
+    <ul id="toc"></ul>
+  </aside>
+
+  <article class="article-content">
             <div class="meta-group">
               {{#is article.created_at article.edited_at}}
                 <span class="meta-data">{{date article.created_at timeago=true}}</span>
@@ -85,12 +58,13 @@
               {{/is}}
             </div>
           </div>
-        </div>
+        </div> 
 
         {{#if settings.show_follow_article}}
           <div class="article-subscribe">{{subscribe}}</div>
         {{/if}}
       </header>
+
 
       <section class="article-info">
         <div class="article-content">
@@ -131,6 +105,8 @@
           {{/if}}
         </div>
       </section>
+  </article>
+</div>
 
       <footer>
         <div class="article-footer">
