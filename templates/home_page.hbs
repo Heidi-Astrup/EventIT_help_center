@@ -1,6 +1,6 @@
 <h1 class="visibility-hidden">{{ help_center.name }}</h1>
 
-<h1>Event IT Help Center - Hej </h1>
+<h1>Event IT Help Center - Hej verden!! </h1>
 <p>Vi bygger dette fra bunden ja tak 🚀</p>
 
 <section id="main-content" class="section hero">
@@ -33,10 +33,13 @@
                   src="{{asset 'medlemmer.svg'}}"
                   alt="ikon til Medlemssystem"
                 />{{/is}}
+                {{#is id 200525902}}<span id="kob-kategori" class="blocks-item-title block-item-link--full">{{name}}</span>
+                {{/is}}
                 <span class="blocks-item-title">{{name}}</span>
                 <span class="blocks-item-description">{{excerpt description}}</span>
               </a>
             </li>
+            {{!-- 
           {{else}}
             {{#each sections}}
               <li class="blocks-item">
@@ -47,7 +50,7 @@
                   <span class="blocks-item-description">{{excerpt description}}</span>
                 </a>
               </li>
-            {{/each}}
+            {{/each}}--}}
           {{/if}}
         {{/each}}
       </ul>

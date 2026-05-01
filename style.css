@@ -1611,6 +1611,11 @@ ul {
   max-height: 30px;
 }
 
+#kob-kategori {
+  background-color: #f1f1f1;
+  color: $brand_color;
+}
+
 /* Mere specifik selector for at sikre at modifieren ikke overskrives */
 .blocks-item > a.blocks-item-link.block-item-link--full,
 .blocks-item > a.block-item-link--full {
