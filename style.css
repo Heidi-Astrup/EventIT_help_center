@@ -1641,11 +1641,20 @@ ul {
 }
 
 /***** Promoted articles *****/
+.articles {
+  background-color: #d9d9d9;
+}
+
 .promoted-articles {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+.promoted-articles {
+  color: $brand_color;
+}
+
 @media (min-width: 1024px) {
   .promoted-articles {
     flex-direction: row;
@@ -1848,7 +1857,7 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 @media (min-width: 768px) {
   .section-tree {
@@ -1863,12 +1872,12 @@ ul {
   padding: 30px 0px 30px 0px;
   margin-top: 20px;
   border-radius: 15px;
-  background-color: #002238;
+  background-color: $brand_color;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-/*Hover jumping effect om category boxes*/
+/*Hover jumping effect on category boxes*/
 .section-tree .section:hover {
   transform: translateY(-15px);
 }
