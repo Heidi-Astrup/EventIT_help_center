@@ -5283,3 +5283,28 @@ zd-summary-block {
   font-style: italic;
   padding: 0 15px;
 }
+
+/*spørgsmål til køb artikel accordin*/
+.accordion-item {
+  border-bottom: 2px solid $brand_color;
+  padding: 20px 0;
+}
+
+.accordion-title {
+  cursor: pointer;
+  margin: 0;
+  font-size: 18px;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-item.open .accordion-content {
+  display: block;
+}
+
+.accordion-item.open p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}

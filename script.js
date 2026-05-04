@@ -716,3 +716,51 @@ document.addEventListener("DOMContentLoaded", function () {
     toc.appendChild(li);
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector("#article-body.accordion-body");
+  if (!container) return;
+
+  const nodes = Array.from(container.children);
+
+  container.innerHTML = "";
+
+  let currentItem = null;
+
+  nodes.forEach(el => {
+    if (el.tagName === "H2") {
+
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("accordion-item");
+
+      const title = document.createElement("h2");
+      title.classList.add("accordion-title");
+      title.textContent = el.textContent;
+
+      const content = document.createElement("div");
+      content.classList.add("accordion-content");
+
+       title.addEventListener("click", () => {
+
+        // 🔥 luk alle andre
+        document.querySelectorAll(".accordion-item").forEach(item => {
+          if (item !== wrapper) {
+            item.classList.remove("open");
+          }
+        });
+
+        // toggle nuværende
+        wrapper.classList.toggle("open");
+      });
+
+      wrapper.appendChild(title);
+      wrapper.appendChild(content);
+      container.appendChild(wrapper);
+
+      currentItem = content; // <- vi “tracker” nuværende korrekt
+
+    } else if (currentItem) {
+      currentItem.appendChild(el.cloneNode(true));
+    }
+  });
+});
