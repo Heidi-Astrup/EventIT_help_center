@@ -1503,7 +1503,7 @@ ul {
   }
 }
 .blocks-item {
-  border: 1px solid $brand_color;
+  background-color: $brand-color;
   border-radius: 15px;
   box-sizing: border-box;
   color: $link_color;
@@ -1611,9 +1611,16 @@ ul {
   max-height: 30px;
 }
 
+/*styling af den ene spørgsmål for køb kategori*/
 #kob-kategori {
-  background-color: #f1f1f1;
   color: $brand_color;
+}
+
+.category-200525902 {
+  background-color: #f1f1f1;
+  padding: 30px;
+  border: 3px solid $brand_color;
+
 }
 
 /* Mere specifik selector for at sikre at modifieren ikke overskrives */

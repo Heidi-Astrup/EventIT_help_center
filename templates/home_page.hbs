@@ -1,6 +1,6 @@
 <h1 class="visibility-hidden">{{ help_center.name }}</h1>
 
-<h1>Event IT Help Center - Hej verden!! </h1>
+<h1>Event IT Help Center - Hej verden!! - hej igen</h1>
 <p>Vi bygger dette fra bunden ja tak 🚀</p>
 
 <section id="main-content" class="section hero">
@@ -22,7 +22,7 @@
         {{#each categories}}
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
-              <a href='{{url}}' class="blocks-item-link">
+              <a href='{{url}}' class="blocks-item-link category-{{id}}">
                 {{#is id 27088098048540}}<img
                   class="system-icon"
                   src="{{asset 'Eventsystem.svg'}}"
@@ -33,13 +33,16 @@
                   src="{{asset 'medlemmer.svg'}}"
                   alt="ikon til Medlemssystem"
                 />{{/is}}
-                {{#is id 200525902}}<span id="kob-kategori" class="blocks-item-title block-item-link--full">{{name}}</span>
+                {{#is id 200525902}}<span id="kob-kategori" class="blocks-item-title">{{name}}</span>
+                 {{else}}
+                  <span class="blocks-item-title">{{name}}</span>
+
                 {{/is}}
-                <span class="blocks-item-title">{{name}}</span>
                 <span class="blocks-item-description">{{excerpt description}}</span>
               </a>
             </li>
             {{!-- 
+            
           {{else}}
             {{#each sections}}
               <li class="blocks-item">
