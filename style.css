@@ -304,7 +304,7 @@ a:focus {
 }
 
 .container {
-  max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -788,19 +788,20 @@ ul {
 
 /***** Header *****/
 .header {
-  max-width: 1160px;
   margin: 0 auto;
-  padding: 0 5%;
-  position: relative;
+  position: sticky;
+  top: 0;
   align-items: center;
   display: flex;
-  height: 71px;
+  height: 100px;
   justify-content: space-between;
+  background-color: $background_color;
+  z-index: 10;
 }
 @media (min-width: 1160px) {
   .header {
-    padding: 0;
-    width: 90%;
+    padding: 0 10%;
+    width: 100%;
   }
 }
 
@@ -1147,7 +1148,18 @@ ul {
 }
 .footer-language-selector button {
   color: $brand_color;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.language-selector-icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: block;
+  object-fit: contain;
 }
 
 /* Footer layout helpers */
@@ -1522,8 +1534,9 @@ ul {
 }
 
 .system-icon {
-  width: 150px;
+  width: 16%;
   margin: auto;
+  margin-bottom: 5px;
 }
 
 @media (min-width: 768px) {
@@ -1562,7 +1575,7 @@ ul {
 }
 .blocks-item-link {
   background-color: $brand_color;
-  padding: 50px 20px;
+  padding: 10% 5%;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1595,6 +1608,7 @@ ul {
   margin-bottom: 0;
   font-size: 20px;
   font-weight: 600;
+  margin: 10px;
 }
 .blocks-item-description {
   margin: 0;
@@ -1618,9 +1632,8 @@ ul {
 
 .category-200525902 {
   background-color: #f1f1f1;
-  padding: 30px;
-  border: 3px solid $brand_color;
-
+  padding: 1%;
+  border: 2px solid $brand_color;
 }
 
 /* Mere specifik selector for at sikre at modifieren ikke overskrives */
@@ -1655,6 +1668,7 @@ ul {
 
 .promoted-articles {
   display: flex;
+  width: 100%;
   flex-direction: column;
   flex-wrap: wrap;
   list-style: disc;
@@ -1662,7 +1676,7 @@ ul {
 }
 
 .promoted-articles li {
-  break-inside: avoid;  /* undgår at items bliver delt */
+  break-inside: avoid; /* undgår at items bliver delt */
   margin-bottom: 8px;
 }
 
