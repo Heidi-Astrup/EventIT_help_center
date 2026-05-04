@@ -1634,11 +1634,12 @@ ul {
 
 /***** Homepage *****/
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
+
 @media (min-width: 768px) {
   .section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1656,6 +1657,13 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.promoted-articles li {
+  break-inside: avoid;  /* undgår at items bliver delt */
+  margin-bottom: 8px;
 }
 
 .promoted-articles {
