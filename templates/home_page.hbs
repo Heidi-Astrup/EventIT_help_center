@@ -22,7 +22,12 @@
         {{#each categories}}
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
-              <a href='{{url}}' class="blocks-item-link category-{{id}}">
+              <a 
+              href="{{#is id 200525902}}/hc/da/sections/201093912-Ofte-stillede-sp%C3%B8rgsm%C3%A5l
+                {{else}}
+                  {{url}}
+                {{/is}}" 
+              class="blocks-item-link category-{{id}}">
                 {{#is id 27088098048540}}<img
                   class="system-icon"
                   src="{{asset 'Eventsystem.svg'}}"
