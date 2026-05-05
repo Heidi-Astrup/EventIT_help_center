@@ -1522,7 +1522,7 @@ ul {
   background-color: $brand-color;
   border-radius: 15px;
   box-sizing: border-box;
-  color: $link_color;
+  color: $brand_text_color;
   display: flex;
   flex: 1 0 340px;
   margin: 0 0 30px;
