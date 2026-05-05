@@ -1136,7 +1136,14 @@ ul {
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
+  width: 90%;
 }
+
+#footer-nav-divider {
+  padding-bottom: 20px;
+  border-bottom: 2px solid $brand_text_color;
+}
+
 @media (min-width: 1160px) {
   .footer-inner {
     padding: 0;
@@ -1169,17 +1176,12 @@ ul {
   color: $brand_text_color;
   font-size: 15px;
 }
-.footer-divider {
-  width: 82vw;
-  justify-self: center;
-  color: $brand_text_color;
-  padding: 0;
-  margin: 30px auto;
-}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
 }
 .footer-copy {
   color: $brand_text_color;
