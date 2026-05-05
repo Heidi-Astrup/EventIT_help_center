@@ -1261,7 +1261,6 @@ ul {
   flex-direction: row-reverse;
   align-items: flex-start; /* 🔥 vigtigt */
   gap: 40px;
-  color: red;
 }
 
 .toc-container {
@@ -1271,7 +1270,7 @@ ul {
   background-color: $grey_color;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
-  padding: 15px;
+  padding: 30px 20px;
   border-radius: 20px;
 }
 
@@ -2236,6 +2235,7 @@ ul {
   flex-direction: column;
   padding: 20px 0;
   width: 60vw;
+  background-color: $grey_color;
 }
 @media (min-width: 768px) {
   .article-relatives {
