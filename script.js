@@ -75,6 +75,33 @@
         });
       }
     });
+
+    // Mobile TOC Toggle
+    const tocMobileToggle = document.querySelector(".toc-mobile-toggle");
+    const tocMobileContent = document.getElementById("toc-mobile-content");
+
+    if (tocMobileToggle && tocMobileContent) {
+      tocMobileToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isExpanded =
+          tocMobileToggle.getAttribute("aria-expanded") === "true";
+        tocMobileToggle.setAttribute("aria-expanded", !isExpanded);
+        tocMobileContent.setAttribute("aria-hidden", isExpanded);
+        tocMobileContent.classList.toggle("open");
+      });
+
+      // Close on escape
+      tocMobileContent.addEventListener("keyup", (event) => {
+        if (event.keyCode === ESCAPE) {
+          tocMobileToggle.setAttribute("aria-expanded", false);
+          tocMobileContent.setAttribute("aria-hidden", true);
+          tocMobileContent.classList.remove("open");
+          tocMobileToggle.focus();
+        }
+      });
+    }
   });
 
   const isPrintableChar = (str) => {
@@ -675,34 +702,130 @@
   });
 })();
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Vent lidt så alt (inkl. accordion) er loaded
+  setTimeout(() => {
+    buildTableOfContents();
+    initMobileToc();
+  }, 100);
+});
+
+// =========================
+// MOBILE TOC TOGGLE
+// =========================
+function initMobileToc() {
+  const toggle = document.querySelector(".toc-mobile-toggle");
+  const content = document.getElementById("toc-mobile-content");
+
+  if (!toggle || !content) return;
+
+  toggle.addEventListener("click", function () {
+    const isOpen = content.classList.contains("open");
+
+    content.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", !isOpen);
+    content.setAttribute("aria-hidden", isOpen);
+  });
+}
+
+// =========================
+// HANDLE CLICK (SCROLL + CLOSE)
+// =========================
+function handleTocClick(headingId) {
+  const heading = document.getElementById(headingId);
+  if (!heading) return;
+
+  // Scroll
+  heading.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  // Åbn accordion hvis relevant
+  if (heading.classList.contains("accordion-title")) {
+    heading.click();
+  }
+
+  // Luk mobil menu
+  const tocMobileContent = document.getElementById("toc-mobile-content");
+  const tocMobileToggle = document.querySelector(".toc-mobile-toggle");
+
+  if (tocMobileContent && tocMobileToggle) {
+    tocMobileContent.classList.remove("open");
+    tocMobileToggle.setAttribute("aria-expanded", false);
+    tocMobileContent.setAttribute("aria-hidden", true);
+  }
+}
+
+// =========================
+// BUILD TOC
+// =========================
+function buildTableOfContents() {
   const content = document.querySelector(".article-body");
   const toc = document.getElementById("toc");
+  const tocMobile = document.getElementById("toc-mobile");
 
-  if (!content || !toc) return;
+  if (!content) return;
+
+  // Ryd eksisterende
+  if (toc) toc.innerHTML = "";
+  if (tocMobile) tocMobile.innerHTML = "";
 
   let headings = content.querySelectorAll("h2, h3");
 
-  // Fjern dubletter (Zendesk renderer nogle gange flere gange)
+  // Fjern dubletter (baseret på tekst)
   const seen = new Set();
   headings = Array.from(headings).filter((h) => {
-    if (seen.has(h.id)) return false;
-    seen.add(h.id);
+    const text = h.textContent.trim();
+    if (seen.has(text)) return false;
+    seen.add(text);
     return true;
   });
 
-  // Fjern uønskede Zendesk headings
-  headings.forEach((heading) => {
-    const a = document.createElement("a");
-    a.href = "#" + heading.id;
-    a.textContent = heading.textContent;
+  // Lav IDs hvis mangler
+  headings.forEach((heading, index) => {
+    if (!heading.id) {
+      heading.id =
+        "heading-" +
+        index +
+        "-" +
+        heading.textContent
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, "-")
+          .replace(/[^\w-]/g, "");
+    }
 
-    const li = document.createElement("li");
-    li.appendChild(a);
-    toc.appendChild(li);
+    const createItem = (target) => {
+      const li = document.createElement("li");
+
+      const a = document.createElement("a");
+      a.href = "#" + heading.id;
+      a.textContent = heading.textContent;
+
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        handleTocClick(heading.id);
+      });
+
+      li.appendChild(a);
+      target.appendChild(li);
+    };
+
+    if (toc) createItem(toc);
+    if (tocMobile) createItem(tocMobile);
   });
-});
+}
 
+
+
+
+
+
+
+// Accordion on spørgsmål for køb page
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector("#article-body.accordion-body");
   if (!container) return;
@@ -720,6 +843,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const title = document.createElement("h2");
       title.classList.add("accordion-title");
+
+      // Preserve heading ID if it exists
+      if (el.id) {
+        title.id = el.id;
+      }
+
       title.innerHTML = `
         <span>${el.textContent}</span>
         <span class="accordion-icon">v</span>
