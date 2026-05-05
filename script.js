@@ -683,7 +683,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let headings = content.querySelectorAll("h2, h3");
 
-  // 🔥 Fjern dubletter (Zendesk renderer nogle gange flere gange)
+  // Fjern dubletter
   const seen = new Set();
   headings = Array.from(headings).filter((h) => {
     if (seen.has(h.id)) return false;
@@ -691,27 +691,21 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   });
 
-  // 🔥 Fjern uønskede Zendesk headings
-  headings = headings.filter((h) => {
-    return !h.closest(".article-votes, .comments, .recent-articles");
+  // Fjern dubletter (Zendesk renderer nogle gange flere gange)
+  const seen = new Set();
+  headings = Array.from(headings).filter((h) => {
+    if (seen.has(h.id)) return false;
+    seen.add(h.id);
+    return true;
   });
 
-  if (headings.length < 2) {
-    toc.style.display = "none";
-    return;
-  }
-
+  // Fjern uønskede Zendesk headings
   headings.forEach((heading) => {
-    const li = document.createElement("li");
     const a = document.createElement("a");
-
     a.href = "#" + heading.id;
     a.textContent = heading.textContent;
 
-    if (heading.tagName === "H3") {
-      li.style.marginLeft = "15px";
-    }
-
+    const li = document.createElement("li");
     li.appendChild(a);
     toc.appendChild(li);
   });
@@ -727,9 +721,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentItem = null;
 
-  nodes.forEach(el => {
+  nodes.forEach((el) => {
     if (el.tagName === "H2") {
-
       const wrapper = document.createElement("div");
       wrapper.classList.add("accordion-item");
 
@@ -740,10 +733,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const content = document.createElement("div");
       content.classList.add("accordion-content");
 
-       title.addEventListener("click", () => {
-
+      title.addEventListener("click", () => {
         // 🔥 luk alle andre
-        document.querySelectorAll(".accordion-item").forEach(item => {
+        document.querySelectorAll(".accordion-item").forEach((item) => {
           if (item !== wrapper) {
             item.classList.remove("open");
           }
@@ -758,7 +750,6 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(wrapper);
 
       currentItem = content; // <- vi “tracker” nuværende korrekt
-
     } else if (currentItem) {
       currentItem.appendChild(el.cloneNode(true));
     }
