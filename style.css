@@ -1665,6 +1665,9 @@ ul {
 /***** Promoted articles *****/
 .articles {
   background-color: #d9d9d9;
+  width: 100vw;
+  left: 0;
+  padding: 0 5%;
 }
 
 .promoted-articles {
