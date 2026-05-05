@@ -88,14 +88,11 @@
     {{#if promoted_articles}}
       <section class="articles">
         <h2>{{t 'promoted_articles'}}</h2>
-
-        <h3>Eventsystem</h3>
         <ul class="article-list promoted-articles">
           {{#each promoted_articles}}
                 <li class="promoted-articles-item">
                     <a href="{{url}}">
                       {{title}}
-
                       {{#if internal}}
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
                           <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
