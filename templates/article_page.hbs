@@ -12,6 +12,20 @@
         {{search scoped=settings.scoped_kb_search submit=false}}
       </div>
     </div>
+
+    <!-- Mobile TOC Header -->
+    <div class="toc-mobile-header collapsible-toc">
+      <button class="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-content">
+        <span class="toc-mobile-title">Indhold</span>
+        <span class="toc-mobile-icon">▼</span>
+      </button>
+    </div>
+
+    <!-- Mobile TOC Content -->
+    <div class="toc-mobile-content" id="toc-mobile-content" aria-hidden="true">
+      <ul id="toc"></ul>
+    </div>
+
     <article id="main-content" class="article accordion-article">
       <h1 title="{{article.title}}" class="article-title">
           {{article.title}}
@@ -73,9 +87,23 @@
     --}}
 
     <div class="article-layout">
+      <!-- Mobile TOC Header -->
+      <div class="toc-mobile-header collapsible-toc">
+        <button class="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-mobile-content">
+          <span class="toc-mobile-title">Indhold</span>
+          <span class="toc-mobile-icon">▼</span>
+        </button>
+      </div>
+
+      <!-- Mobile TOC Content -->
+      <div class="toc-mobile-content" id="toc-mobile-content" aria-hidden="true">
+        <ul id="toc"></ul>
+      </div>
+
+      <!-- Desktop TOC -->
       <aside class="toc-container">
         <h3>Indhold</h3>
-        <ul id="toc"></ul>
+        <ul id="toc-desktop"></ul>
       </aside>
 
       <article class="article-body">

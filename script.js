@@ -75,6 +75,33 @@
         });
       }
     });
+
+    // Mobile TOC Toggle
+    const tocMobileToggle = document.querySelector(".toc-mobile-toggle");
+    const tocMobileContent = document.getElementById("toc-mobile-content");
+
+    if (tocMobileToggle && tocMobileContent) {
+      tocMobileToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isExpanded =
+          tocMobileToggle.getAttribute("aria-expanded") === "true";
+        tocMobileToggle.setAttribute("aria-expanded", !isExpanded);
+        tocMobileContent.setAttribute("aria-hidden", isExpanded);
+        tocMobileContent.classList.toggle("open");
+      });
+
+      // Close on escape
+      tocMobileContent.addEventListener("keyup", (event) => {
+        if (event.keyCode === ESCAPE) {
+          tocMobileToggle.setAttribute("aria-expanded", false);
+          tocMobileContent.setAttribute("aria-hidden", true);
+          tocMobileContent.classList.remove("open");
+          tocMobileToggle.focus();
+        }
+      });
+    }
   });
 
   const isPrintableChar = (str) => {
@@ -676,14 +703,49 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Build TOC after all DOM content is loaded - will run after accordion script
+  setTimeout(() => {
+    buildTableOfContents();
+  }, 100);
+});
+
+// Global function for TOC clicks
+function handleTocClick(headingId) {
+  const heading = document.getElementById(headingId);
+  if (!heading) return;
+
+  // Scroll to heading
+  heading.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // If it's an accordion title, trigger click to open it
+  if (heading.classList.contains("accordion-title")) {
+    heading.click();
+  }
+
+  // Close mobile TOC menu if open
+  const tocMobileContent = document.getElementById("toc-mobile-content");
+  const tocMobileToggle = document.querySelector(".toc-mobile-toggle");
+  if (tocMobileContent && tocMobileToggle) {
+    tocMobileContent.classList.remove("open");
+    tocMobileToggle.setAttribute("aria-expanded", false);
+    tocMobileContent.setAttribute("aria-hidden", true);
+  }
+}
+
+function buildTableOfContents() {
   const content = document.querySelector(".article-body");
   const toc = document.getElementById("toc");
+  const tocDesktop = document.getElementById("toc-desktop");
 
-  if (!content || !toc) return;
+  if (!content || (!toc && !tocDesktop)) return;
+
+  // Clear existing TOC
+  if (toc) toc.innerHTML = "";
+  if (tocDesktop) tocDesktop.innerHTML = "";
 
   let headings = content.querySelectorAll("h2, h3");
 
-  // Fjern dubletter (Zendesk renderer nogle gange flere gange)
+  // Fjern dubletter
   const seen = new Set();
   headings = Array.from(headings).filter((h) => {
     if (seen.has(h.id)) return false;
@@ -691,17 +753,48 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   });
 
-  // Fjern uønskede Zendesk headings
-  headings.forEach((heading) => {
-    const a = document.createElement("a");
-    a.href = "#" + heading.id;
-    a.textContent = heading.textContent;
-
-    const li = document.createElement("li");
-    li.appendChild(a);
-    toc.appendChild(li);
+  // Generate IDs if missing
+  headings.forEach((heading, index) => {
+    if (!heading.id) {
+      heading.id =
+        "heading-" +
+        index +
+        "-" +
+        heading.textContent.replace(/\s+/g, "-").toLowerCase();
+    }
   });
-});
+
+  // Populate both TOCs
+  headings.forEach((heading) => {
+    if (toc) {
+      const a = document.createElement("a");
+      a.href = "#" + heading.id;
+      a.textContent = heading.textContent;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        handleTocClick(heading.id);
+      });
+
+      const li = document.createElement("li");
+      li.appendChild(a);
+      toc.appendChild(li);
+    }
+
+    if (tocDesktop) {
+      const a = document.createElement("a");
+      a.href = "#" + heading.id;
+      a.textContent = heading.textContent;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        handleTocClick(heading.id);
+      });
+
+      const li = document.createElement("li");
+      li.appendChild(a);
+      tocDesktop.appendChild(li);
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector("#article-body.accordion-body");
@@ -720,6 +813,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const title = document.createElement("h2");
       title.classList.add("accordion-title");
+
+      // Preserve heading ID if it exists
+      if (el.id) {
+        title.id = el.id;
+      }
+
       title.innerHTML = `
         <span>${el.textContent}</span>
         <span class="accordion-icon">v</span>
