@@ -789,6 +789,8 @@ ul {
 
 /***** Header *****/
 .header {
+  padding: 0 5%;
+  width: 100%;
   margin: 0 auto;
   position: sticky;
   top: 0;
@@ -798,12 +800,6 @@ ul {
   justify-content: space-between;
   background-color: $background_color;
   z-index: 10;
-}
-@media (min-width: 1160px) {
-  .header {
-    padding: 0 10%;
-    width: 100%;
-  }
 }
 
 .logo img {
