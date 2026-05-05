@@ -1174,10 +1174,11 @@ ul {
   font-size: 15px;
 }
 .footer-divider {
-  max-width: 1160px;
+  width: 1160px;
   justify-self: center;
-  border-top: 1px solid rgba(191, 178, 178, 0.842);
-  margin: 18px 0;
+  color: $brand_text_color;
+  padding: 0;
+  margin: 30px auto;
 }
 .footer-bottom {
   display: flex;
