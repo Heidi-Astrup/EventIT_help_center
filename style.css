@@ -1970,7 +1970,7 @@ ul {
 }
 
 /* Mobile-specific styling for the category list to match the design */
-@media (max-width: 767px) {
+@media (max-width: 825px) {
   .section-tree {
     display: block;
     background: $brand_color;
@@ -2025,8 +2025,7 @@ ul {
   }
 
   /* Reduce whitespace for mobile */
-  .section-tree .see-all-articles,
-  .article-list-item {
+  .section-tree .see-all-articles {
     display: none;
   }
 }
