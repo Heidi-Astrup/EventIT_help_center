@@ -1174,7 +1174,7 @@ ul {
   font-size: 15px;
 }
 .footer-divider {
-  width: 1160px;
+  width: 82vw;
   justify-self: center;
   color: $brand_text_color;
   padding: 0;
