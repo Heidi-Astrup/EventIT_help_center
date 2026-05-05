@@ -1522,7 +1522,7 @@ ul {
   background-color: $brand-color;
   border-radius: 15px;
   box-sizing: border-box;
-  color: $link_color;
+  color: $brand_text_color;
   display: flex;
   flex: 1 0 340px;
   margin: 0 0 30px;
@@ -5328,4 +5328,21 @@ zd-summary-block {
 .accordion-item.open p {
   margin-top: 10px;
   margin-bottom: 0px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-icon {
+  transition: transform 0.2s ease;
+  font-size: 18px;
+}
+
+/* Når åben → roter */
+.accordion-item.open .accordion-icon {
+  transform: rotate(180deg);
 }

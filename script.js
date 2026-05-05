@@ -728,7 +728,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const title = document.createElement("h2");
       title.classList.add("accordion-title");
-      title.textContent = el.textContent;
+      title.innerHTML = `
+        <span>${el.textContent}</span>
+        <span class="accordion-icon">v</span>
+      `;
 
       const content = document.createElement("div");
       content.classList.add("accordion-content");
@@ -741,7 +744,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        // toggle nuværende
+        // toggle
         wrapper.classList.toggle("open");
       });
 
