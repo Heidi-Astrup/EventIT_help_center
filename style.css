@@ -1176,7 +1176,6 @@ ul {
   color: $brand_text_color;
   font-size: 15px;
 }
-
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -1191,6 +1190,27 @@ ul {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+  .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  #footer-nav-divider {
+    padding-bottom: 40px;
+    border-bottom: 2px solid $brand_text_color;
+  }
+  .footer-social {
+    flex-direction: column;
+  }
 }
 .follow-label {
   color: $brand_text_color;
