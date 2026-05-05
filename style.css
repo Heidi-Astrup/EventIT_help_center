@@ -1949,6 +1949,68 @@ ul {
   color: $text_color;
 }
 
+/* Mobile-specific styling for the category list to match the design */
+@media (max-width: 767px) {
+  .section-tree {
+    display: block;
+    background: $brand_color;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /* Make the link fill the row and remove the desktop card spacing */
+  .section-tree > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .section-tree .section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 16px;
+    margin: 0; /* items are visually separated by alternating bg, not gaps */
+    min-width: auto;
+    border-radius: 0; /* container handles rounding */
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+    text-align: left;
+    color: $brand_text_color;
+    border: 1px solid $background_color;
+  }
+  /* Hover uses hover_link_color from manifest */
+  .section-tree .section:hover {
+    background: $hover_link_color;
+    transform: none;
+  }
+
+  .category-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: block;
+    object-fit: contain;
+  }
+
+  .section-tree-title {
+    color: $brand_text_color;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+    font-weight: 600;
+  }
+
+  /* Reduce whitespace for mobile */
+  .section-tree .see-all-articles,
+  .article-list-item {
+    display: none;
+  }
+}
+
 .icon-star {
   color: $brand_color;
   font-size: 18px;
