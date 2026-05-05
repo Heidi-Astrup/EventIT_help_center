@@ -1613,6 +1613,8 @@ ul {
   font-size: 20px;
   font-weight: 600;
   margin: 10px;
+  color: $brand_text_color;
+
 }
 .blocks-item-description {
   margin: 0;
