@@ -735,21 +735,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const title = document.createElement("h2");
       title.classList.add("accordion-title");
-      title.textContent = el.textContent;
+      title.innerHTML = `
+        <span>${el.textContent}</span>
+        <span class="accordion-icon">v</span>
+      `;
 
       const content = document.createElement("div");
       content.classList.add("accordion-content");
 
        title.addEventListener("click", () => {
 
-        // 🔥 luk alle andre
+        // luk alle andre
         document.querySelectorAll(".accordion-item").forEach(item => {
           if (item !== wrapper) {
             item.classList.remove("open");
           }
         });
 
-        // toggle nuværende
+        // toggle 
         wrapper.classList.toggle("open");
       });
 
@@ -757,7 +760,7 @@ document.addEventListener("DOMContentLoaded", function () {
       wrapper.appendChild(content);
       container.appendChild(wrapper);
 
-      currentItem = content; // <- vi “tracker” nuværende korrekt
+      currentItem = content;
 
     } else if (currentItem) {
       currentItem.appendChild(el.cloneNode(true));

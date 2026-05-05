@@ -5326,3 +5326,20 @@ zd-summary-block {
   margin-top: 10px;
   margin-bottom: 0px;
 }
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-icon {
+  transition: transform 0.2s ease;
+  font-size: 18px;
+}
+
+/* Når åben → roter */
+.accordion-item.open .accordion-icon {
+  transform: rotate(180deg);
+}
