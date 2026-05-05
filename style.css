@@ -1508,7 +1508,7 @@ ul {
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
-  padding: 0;
+  padding: 15px;
 }
 @media (min-width: 768px) {
   .blocks-list {
