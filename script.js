@@ -683,14 +683,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let headings = content.querySelectorAll("h2, h3");
 
-  // Fjern dubletter
-  const seen = new Set();
-  headings = Array.from(headings).filter((h) => {
-    if (seen.has(h.id)) return false;
-    seen.add(h.id);
-    return true;
-  });
-
   // Fjern dubletter (Zendesk renderer nogle gange flere gange)
   const seen = new Set();
   headings = Array.from(headings).filter((h) => {
