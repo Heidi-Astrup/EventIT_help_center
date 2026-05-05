@@ -1258,6 +1258,7 @@ ul {
 /***** article page *****/
 .article-layout {
   display: flex;
+  flex-direction: row-reverse;
   align-items: flex-start; /* 🔥 vigtigt */
   gap: 40px;
   color: red;
@@ -2029,10 +2030,11 @@ ul {
   justify-content: space-between;
   margin-bottom: 40px;
   margin-top: 20px;
+  width: 80vw;
 }
 @media (min-width: 768px) {
   .article-header {
-    flex-direction: row;
+    flex-direction: colomn;
     margin-top: 0;
   }
 }
@@ -2226,10 +2228,10 @@ ul {
   }
 }
 .article-relatives {
-  border-top: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   padding: 20px 0;
+  width: 60vw;
 }
 @media (min-width: 768px) {
   .article-relatives {
@@ -2241,29 +2243,21 @@ ul {
   min-width: 50%;
   overflow-wrap: break-word;
   margin-right: 0;
+  padding-right: 20px;
 }
 .article-relatives > *:last-child {
   padding: 0;
 }
-@media (min-width: 768px) {
-  .article-relatives > * {
-    padding-right: 20px;
-  }
-}
 .article-votes {
-  border-top: 1px solid #ddd;
   padding: 30px 0;
   text-align: center;
+  margin: auto;
+  width: 60vw;
 }
 .article-votes-question {
   font-size: 15px;
   font-weight: normal;
   margin-bottom: 0;
-}
-.article-vote {
-  margin: 10px 5px;
-  min-width: 90px;
-  width: auto;
 }
 .article-more-questions {
   margin: 10px 0 20px;
@@ -2280,9 +2274,6 @@ ul {
 .article-more-questions a:active,
 .article-more-questions a:focus {
   color: $hover_link_color;
-}
-.article-return-to-top {
-  border-top: 1px solid #848f99;
 }
 @media (min-width: 1024px) {
   .article-return-to-top {
