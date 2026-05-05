@@ -73,15 +73,15 @@
     --}}
 
     <div class="article-layout">
-  <aside class="toc-container">
-    <h3>Indhold</h3>
-    <ul id="toc"></ul>
-  </aside>
+      <aside class="toc-container">
+        <h3>Indhold</h3>
+        <ul id="toc"></ul>
+      </aside>
 
-  <article class="article-body">
-    {{article.body}}
-  </article>
-</div>
+      <article class="article-body">
+        {{article.body}}
+      </article>
+    </div>
 
 
       <footer>
@@ -119,123 +119,6 @@
           {{related_articles}}
         {{/if}}
       </div>
-      {{#if settings.show_article_comments}}
-        <div class="article-comments" id="article-comments">
-          <section class="comments">
-            <header class="comment-overview">
-              <h2 class="comment-heading">
-                {{t 'comments'}}
-              </h2>
-              <p class="comment-callout">{{t 'comments_count' count=article.comment_count}}</p>
-              {{#if comments}}
-                <div class="dropdown comment-sorter">
-                  <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                    {{t 'sort_by'}}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
-                      <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-                    </svg>
-                  </button>
-                  <span class="dropdown-menu" role="menu">
-                    {{#each comment_sorters}}
-                      <a aria-checked="{{selected}}" href="{{url}}" role="menuitemradio">{{name}}</a>
-                    {{/each}}
-                  </span>
-                </div>
-              {{/if}}
-            </header>
-
-            <ul id="comments" class="comment-list">
-              {{#each comments}}
-                <li id="{{anchor}}" class="comment">
-                  <div class="comment-wrapper">
-                    <div class="comment-info">
-                      <div class="comment-author">
-                        <div class="avatar comment-avatar">
-                          {{#if author.agent}}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" aria-hidden="true" viewBox="0 0 12 12" class="icon-agent" aria-label="{{t 'team_member' name=author.name}}">
-                              <path fill="currentColor" d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z"/>
-                            </svg>
-                          {{/if}}
-                          <img src="{{author.avatar_url}}" alt="" class="user-avatar"/>
-                        </div>
-                        <div class="comment-meta">
-                          <span title="{{author.name}}" id="{{anchor}}-author">
-                            {{#link 'user_profile' id=author.id}}
-                              {{author.name}}
-                            {{/link}}
-                          </span>
-
-                          <ul aria-label="{{t 'badges'}}" class="community-badge-titles">
-                            {{#each (filter author.badges on="category_slug" equals="titles")}}
-                              <li class="community-badge community-badge-title" title="{{description}}" aria-label="{{name}}">
-                                {{name}}
-                              </li>
-                            {{/each}}
-                          </ul>
-
-                          <div class="meta-group meta-group-opposite">
-                            {{#if editor}}
-                              <span class="meta-data">{{date edited_at timeago=true}}</span>
-                              <span class="meta-data">{{t 'edited'}}</span>
-                            {{else}}
-                              <span class="meta-data">{{date created_at timeago=true}}</span>
-                            {{/if}}
-                          </div>
-
-                          <ul aria-label="{{t 'badges'}}" class="community-badge-achievements">
-                            {{#each (slice (filter author.badges on="category_slug" equals="achievements") 0 4)}}
-                              <li class="community-badge community-badge-achievement">
-                                <img src="{{icon_url}}" alt="{{name}}" title="{{name}} | {{description}}" />
-                              </li>
-                            {{/each}}
-
-                            {{#if (compare (calc author.badges.length "-" 4) ">" 0)}}
-                              <li class="community-badge community-badge-achievement">
-                                <a href="{{page_path "user_profile" id=author.id filter_by="badges"}}" class="community-badge-achievements-rest"  aria-label="{{t 'more_awards_to' count=(calc author.badges.length "-" 4) name=author.name}}">
-                                  {{t 'plus_more' count=(calc author.badges.length "-" 4)}}
-                                </a>
-                              </li>
-                            {{/if}}
-                          </ul>
-                        </div>
-                        <div class="comment-labels">
-                          {{#with ticket}}
-                            <a href="{{url}}" target="_zendesk_lotus" class="status-label escalation-badge">
-                              {{t 'request'}}{{id}}
-                            </a>
-                          {{/with}}
-                          {{#if pending}}
-                            <span class="comment-pending status-label status-label-pending-moderation">{{t 'pending_approval'}}</span>
-                          {{/if}}
-                        </div>
-                      </div>
-
-                      <section class="comment-body" id="{{anchor}}-body">{{body}}</section>
-                    </div>
-
-                    <div class="comment-actions-container">
-                      <div class="comment-vote vote" role="group">
-                        {{#vote 'up' role='radio' class='vote-up' selected_class='vote-voted' aria-describedby=(concat anchor "-author " anchor "-body")}}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 6.5l3.6 3.6c.2.2.5.2.7 0L12 6.5"/>
-                        </svg>
-                        {{/vote}}
-                        {{vote 'sum' class='vote-sum'}}
-                        {{#vote 'down' role='radio' class='vote-down' selected_class='vote-voted' aria-describedby=(concat anchor "-author " anchor "-body")}}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 6.5l3.6 3.6c.2.2.5.2.7 0L12 6.5"/>
-                        </svg>
-                        {{/vote}}
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              {{/each}}
-            </ul>
-
-          </section>
-        </div>
-      {{/if}}
     </article>
     {{/is}}
   </div>
