@@ -233,9 +233,7 @@ a {
   color: $link_color;
   text-decoration: none;
 }
-a:visited {
-  color: $visited_link_color;
-}
+
 a:hover,
 a:active,
 a:focus {
@@ -400,19 +398,7 @@ ul {
     width: auto;
   }
 }
-.button:visited,
-.pagination-next-link:visited,
-.pagination-prev-link:visited,
-.pagination-first-link:visited,
-.pagination-last-link:visited,
-.subscriptions-subscribe button:visited,
-.requests-table-toolbar .organization-subscribe button:visited,
-.community-follow button:visited,
-.article-subscribe button:visited,
-.section-subscribe button:visited,
-.split-button button:visited {
-  color: $brand_color;
-}
+
 .button:hover,
 .pagination-next-link:hover,
 .pagination-prev-link:hover,
@@ -1267,9 +1253,6 @@ ul {
   content: ">";
   margin: 0 4px;
 }
-.breadcrumbs li a:visited {
-  color: $text_color;
-}
 
 .article-layout {
   display: flex;
@@ -1681,7 +1664,7 @@ ul {
   background-color: $link_color !important;
 }
 
-.blocks-item-link:visited,
+
 .blocks-item-link:hover,
 .blocks-item-link:active {
   color: inherit;
@@ -1760,7 +1743,7 @@ ul {
 }
 
 /* Mobil: 1 kolonne (default) */
-.promoted-articles {
+.promoted-articles, .resent-articles {
   column-count: 1;
   column-gap: 0;
 }
@@ -1773,7 +1756,7 @@ ul {
 }
 
 /* Styling af links */
-.promoted-articles-item a {
+.promoted-articles-item a, .resent-articles a  {
   display: block;
   color: $text_color;
   text-decoration: underline;
@@ -1785,7 +1768,7 @@ ul {
     column-count: 2;
   }
   /* Styling af links */
-  .promoted-articles-item a {
+  .promoted-articles-item a, .resent-articles a {
     text-decoration: none;
   }
 }
@@ -1894,9 +1877,7 @@ ul {
   color: $link_color;
   text-decoration: underline;
 }
-.recent-activity-controls a:visited {
-  color: $visited_link_color;
-}
+
 .recent-activity-controls a:hover,
 .recent-activity-controls a:active,
 .recent-activity-controls a:focus {
@@ -2212,9 +2193,7 @@ ul {
   color: $link_color;
   text-decoration: underline;
 }
-.article-body a:visited {
-  color: $visited_link_color;
-}
+
 .article-body a:hover,
 .article-body a:active,
 .article-body a:focus {
@@ -2398,9 +2377,7 @@ ul {
   color: $link_color;
   text-decoration: underline;
 }
-.article-more-questions a:visited {
-  color: $visited_link_color;
-}
+
 .article-more-questions a:hover,
 .article-more-questions a:active,
 .article-more-questions a:focus {
