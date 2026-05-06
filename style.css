@@ -1970,10 +1970,10 @@ ul {
   margin-bottom: 0;
   font-size: 18px;
   font-weight: 600;
+  color: $brand_text_color;
 }
 .section-tree-title a {
-  /*color: $text_color;*/
-  color: #f1f1f1;
+  color: $brand_text_color;
 }
 .section-tree .see-all-articles {
   display: block;
