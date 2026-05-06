@@ -2077,8 +2077,7 @@ ul {
   }
 
   /* Reduce whitespace for mobile */
-  .section-tree .see-all-articles,
-  .article-list-item {
+  .section-tree .see-all-articles {
     display: none;
   }
 }
