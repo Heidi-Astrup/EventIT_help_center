@@ -233,7 +233,9 @@ a {
   color: $link_color;
   text-decoration: none;
 }
-
+a:visited {
+  color: $visited_link_color;
+}
 a:hover,
 a:active,
 a:focus {
@@ -398,7 +400,19 @@ ul {
     width: auto;
   }
 }
-
+.button:visited,
+.pagination-next-link:visited,
+.pagination-prev-link:visited,
+.pagination-first-link:visited,
+.pagination-last-link:visited,
+.subscriptions-subscribe button:visited,
+.requests-table-toolbar .organization-subscribe button:visited,
+.community-follow button:visited,
+.article-subscribe button:visited,
+.section-subscribe button:visited,
+.split-button button:visited {
+  color: $brand_color;
+}
 .button:hover,
 .pagination-next-link:hover,
 .pagination-prev-link:hover,
@@ -1257,8 +1271,6 @@ ul {
   color: $text_color;
 }
 
-
-
 .article-layout {
   display: flex;
   flex-direction: row-reverse;
@@ -1268,16 +1280,13 @@ ul {
   width: 87vw;
 }
 
-@media (min-width: 768px) {
-  .article-body {
+.article-body {
   max-width: 60%;
-  }
-
-  .toc-container {
-    max-width: 25%;
-  }
 }
 
+.toc-container {
+  max-width: 25%;
+}
 
 .toc-mobile-bar {
   display: none;
@@ -1980,12 +1989,10 @@ ul {
   margin-bottom: 0;
   font-size: 18px;
   font-weight: 600;
-  color: $brand_text_color;
-
 }
 .section-tree-title a {
   /*color: $text_color;*/
-  color: $brand_text_color;
+  color: #f1f1f1;
 }
 .section-tree .see-all-articles {
   display: block;
@@ -2058,7 +2065,8 @@ ul {
   }
 
   /* Reduce whitespace for mobile */
-  .section-tree .see-all-articles {
+  .section-tree .see-all-articles,
+  .article-list-item {
     display: none;
   }
 }
@@ -2506,6 +2514,10 @@ ul {
   margin-top: 0;
   font-size: 18px;
   font-weight: 600;
+  color: $grey_color;
+}
+.recent-articles a {
+  color: #038153;
 }
 .comment-overview {
   border-bottom: 1px solid #ddd;
