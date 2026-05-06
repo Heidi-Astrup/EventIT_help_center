@@ -1743,7 +1743,7 @@ ul {
 }
 
 /* Mobil: 1 kolonne (default) */
-.promoted-articles, .resent-articles {
+.promoted-articles, .recent-articles {
   column-count: 1;
   column-gap: 0;
 }
@@ -1756,7 +1756,7 @@ ul {
 }
 
 /* Styling af links */
-.promoted-articles-item a, .resent-articles a  {
+.promoted-articles-item a, .recent-articles a  {
   display: block;
   color: $text_color;
   text-decoration: underline;
@@ -2424,7 +2424,7 @@ ul {
 
 .recent-articles li,
 .related-articles li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /***** Attachments *****/
@@ -2496,12 +2496,9 @@ ul {
 .related-articles-title {
   margin-bottom: 5px;
   margin-top: 0;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 600;
-  color: $grey_color;
-}
-.recent-articles a {
-  color: #038153;
+  color: $brand_color;
 }
 .comment-overview {
   border-bottom: 1px solid #ddd;
