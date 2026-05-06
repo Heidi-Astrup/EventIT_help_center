@@ -1277,6 +1277,7 @@ ul {
   flex-direction: row-reverse;
   align-items: flex-start; /* 🔥 vigtigt */
   gap: 40px;
+  width: 88vw;
 }
 
 .toc-mobile-bar {
@@ -1739,6 +1740,7 @@ ul {
   width: 100vw;
   left: 0;
   padding: 4% 5%;
+  position: relative;
 }
 
 /* Mobil: 1 kolonne (default) */
