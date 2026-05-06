@@ -306,6 +306,7 @@ a:focus {
   width: 100%;
   margin: 0 auto;
   padding: 0 5%;
+  margin-bottom: 70px;
 }
 @media (min-width: 1160px) {
   .container {
@@ -2067,7 +2068,7 @@ ul {
 /***** Section pages *****/
 .section-container {
   display: flex;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
 }
 .section-content {
   flex: 1;
