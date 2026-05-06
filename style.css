@@ -1282,13 +1282,16 @@ ul {
   width: 87vw;
 }
 
-.article-body {
+@media (min-width: 768px) {
+  .article-body {
   max-width: 60%;
+  }
+
+  .toc-container {
+    max-width: 25%;
+  }
 }
 
-.toc-container {
-  max-width: 25%;
-}
 
 .toc-mobile-bar {
   display: none;
