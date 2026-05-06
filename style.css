@@ -1271,13 +1271,23 @@ ul {
   color: $text_color;
 }
 
-/***** article page *****/
+
+
 .article-layout {
   display: flex;
   flex-direction: row-reverse;
-  align-items: flex-start; /* 🔥 vigtigt */
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 40px;
-  width: 88vw;
+  width: 87vw;
+}
+
+.article-body {
+  max-width: 60%;
+}
+
+.toc-container {
+  max-width: 25%;
 }
 
 .toc-mobile-bar {
@@ -1344,6 +1354,11 @@ ul {
 .article-content {
   flex: 1;
   color: #038153;
+}
+
+/***** article page *****/
+#main-content .article {
+  max-width: 500px;
 }
 
 /***** Search field *****/
