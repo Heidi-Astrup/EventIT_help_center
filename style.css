@@ -1740,7 +1740,7 @@ ul {
   background-color: #d9d9d9;
   width: 100vw;
   left: 0;
-  padding: 0 5%;
+  padding: 0 0%;
 }
 
 .promoted-articles {
@@ -1749,7 +1749,7 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
 .promoted-articles li {
