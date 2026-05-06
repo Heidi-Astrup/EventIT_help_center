@@ -1607,7 +1607,7 @@ ul {
 }
 
 .system-icon {
-  width: 16%;
+  width: 12%;
   margin: auto;
   margin-bottom: 5px;
 }
@@ -1679,9 +1679,9 @@ ul {
 }
 .blocks-item-title {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  margin: 10px;
+  margin: 5px;
   color: $brand_text_color;
 }
 .blocks-item-description {
@@ -1965,6 +1965,7 @@ ul {
   flex-wrap: wrap;
   justify-content: left;
   column-gap: 40px;
+  padding: 15px;
 }
 @media (min-width: 768px) {
   .section-tree {
