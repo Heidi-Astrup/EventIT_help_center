@@ -1307,6 +1307,7 @@ ul {
   background: white;
   display: flex;
   justify-content: space-between;
+  background-color: $grey_color;
 }
 
 /* dropdown */
@@ -1317,6 +1318,8 @@ ul {
   position: sticky;
   top: 48px; /* under bar */
   z-index: 998;
+  border-radius: 0 0 20px 20px;
+  background-color: $grey_color;
 }
 
 .toc-mobile-content.open {
@@ -1784,13 +1787,10 @@ ul {
     column-count: 2;
   }
   /* Styling af links */
-.promoted-articles-item a {
-  text-decoration: none;
+  .promoted-articles-item a {
+    text-decoration: none;
+  }
 }
-}
-
-
-
 
 /***** Community section in homepage *****/
 .community {
