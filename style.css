@@ -1740,65 +1740,42 @@ ul {
   background-color: #d9d9d9;
   width: 100vw;
   left: 0;
-  padding: 0 5%;
+  padding: 4% 5%;
 }
 
+/* Mobil: 1 kolonne (default) */
 .promoted-articles {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  list-style: disc;
-  padding-left: 0px;
+  column-count: 1;
+  column-gap: 0;
 }
 
-.promoted-articles li {
-  break-inside: avoid; /* undgår at items bliver delt */
-  margin-bottom: 8px;
-}
-
-.promoted-articles {
-  color: $brand_color;
-}
-
-@media (min-width: 1024px) {
-  .promoted-articles {
-    flex-direction: row;
-  }
-}
+/* Items */
 .promoted-articles-item {
-  flex: 1 0 auto;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 10px;
 }
-@media (min-width: 1024px) {
-  .promoted-articles-item {
-    align-self: flex-end;
-    flex: 0 0 auto;
-    padding-right: 30px;
-    width: 33%; /* Three columns on desktop */
-  }
-  [dir="rtl"] .promoted-articles-item {
-    padding: 0 0 0 30px;
-  }
-}
-.promoted-articles-item:nth-child(3n) {
-  padding-right: 0;
-}
+
+/* Styling af links */
 .promoted-articles-item a {
   display: block;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  color: $text_color;
+  text-decoration: underline;
 }
-.promoted-articles-item .icon-lock {
-  vertical-align: baseline;
-}
-.promoted-articles-item:last-child a {
-  border: 0;
-}
+
+/* Desktop: 2 kolonner */
 @media (min-width: 1024px) {
-  .promoted-articles-item:last-child a {
-    border-bottom: 1px solid #ddd;
+  .promoted-articles {
+    column-count: 2;
   }
+  /* Styling af links */
+.promoted-articles-item a {
+  text-decoration: none;
 }
+}
+
+
+
 
 /***** Community section in homepage *****/
 .community {
