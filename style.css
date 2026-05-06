@@ -1607,7 +1607,7 @@ ul {
 }
 
 .system-icon {
-  width: 12%;
+  width: 16%;
   margin: auto;
   margin-bottom: 5px;
 }
@@ -1679,9 +1679,9 @@ ul {
 }
 .blocks-item-title {
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  margin: 5px;
+  margin: 10px;
   color: $brand_text_color;
 }
 .blocks-item-description {
@@ -1740,7 +1740,7 @@ ul {
   background-color: #d9d9d9;
   width: 100vw;
   left: 0;
-  padding: 0 0%;
+  padding: 0 5%;
 }
 
 .promoted-articles {
@@ -1965,7 +1965,6 @@ ul {
   flex-wrap: wrap;
   justify-content: left;
   column-gap: 40px;
-  padding: 15px;
 }
 @media (min-width: 768px) {
   .section-tree {
