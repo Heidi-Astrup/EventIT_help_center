@@ -2000,6 +2000,13 @@ ul {
 }
 .article-list-item a {
   color: $text_color;
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .article-list-item a {
+  text-decoration: none;
+}
 }
 
 /* Mobile-specific styling for the category list to match the design */
