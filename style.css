@@ -1342,6 +1342,10 @@ ul {
   border-radius: 15px;
 }
 
+#toc li {
+  margin-bottom: 20px;
+}
+
 .article-content {
   flex: 1;
   color: #038153;
