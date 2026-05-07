@@ -1323,6 +1323,10 @@ ul {
   .toc-container {
     display: none;
   }
+
+  .article-body {
+    max-width: 100%;
+  }
 }
 
 .toc-container {
@@ -1341,10 +1345,11 @@ ul {
   color: #038153;
 }
 
-/***** article page *****/
+/***** article page 
 #main-content .article {
   max-width: 500px;
 }
+  *****/
 
 /***** Search field *****/
 .search-container {
@@ -1792,7 +1797,7 @@ ul {
   }
   /* Styling af links */
   .promoted-articles-item a,
-  .resent-articles a {
+  .recent-articles a {
     text-decoration: none;
   }
 }
