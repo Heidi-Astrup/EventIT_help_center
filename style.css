@@ -1802,6 +1802,11 @@ ul {
   .recent-articles a {
     text-decoration: none;
   }
+
+  .promoted-articles-item a:hover,
+  .recent-articles a:hover {
+    text-decoration: underline;
+  }
 }
 
 /***** Community section in homepage *****/
@@ -2026,7 +2031,12 @@ ul {
   .article-list-item a {
     text-decoration: none;
   }
+
+  .article-list-item a:hover {
+    text-decoration: underline;
+  }
 }
+
 
 /* Mobile-specific styling for the category list to match the design */
 @media (max-width: 767px) {
