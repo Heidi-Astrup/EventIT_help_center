@@ -2238,6 +2238,7 @@ ul {
 .article-body a:active,
 .article-body a:focus {
   color: $hover_link_color;
+  text-decoration: underline;
 }
 .article-body img {
   height: auto;
