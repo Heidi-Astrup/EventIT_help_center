@@ -196,8 +196,7 @@ template {
 body {
   background-color: $background_color;
   color: $text_color;
-  /*font-family: $text_font;*/
-  font-family: "Montserrat", sans-serif;
+  font-family: $text_font;
 
   font-size: 15px;
   line-height: 1.5;
@@ -216,9 +215,7 @@ h3,
 h4,
 h5,
 h6 {
-  /*font-family: $heading_font;*/
-  font-family: "Montserrat", sans-serif;
-
+  font-family: $heading_font;
   margin-top: 0;
 }
 
@@ -1118,8 +1115,8 @@ ul {
 
 /***** Footer *****/
 .footer {
-  margin-top: 5%;
-  padding: 60px 0 40px 0;
+  margin-top: 8%;
+  padding: 0px 0 40px 0;
   background: $brand_color;
 }
 .footer a {
@@ -1143,6 +1140,9 @@ ul {
   .footer-inner {
     padding: 0;
     width: 90%;
+  }
+  .footer {
+    padding: 60px 0 40px 0;
   }
 }
 .footer-language-selector button {
@@ -1509,10 +1509,15 @@ ul {
   background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
-  height: 300px;
+  height: 200px;
   padding: 0 20px;
   text-align: center;
   width: 100%;
+}
+@media (min-width: 1024px) {
+  .hero {
+    height: 300px;
+  }
 }
 .hero-inner {
   position: relative;
