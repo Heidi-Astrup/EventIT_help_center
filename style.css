@@ -2057,13 +2057,13 @@ ul {
 }
 .article-list-item a {
   color: $text_color;
+  font-weight: 500;
   text-decoration: underline;
 }
 
 @media (min-width: 1024px) {
   #article-list {
   column-count: 2;
-  column-gap: 30px;
   }
 
   .article-list-item a {
