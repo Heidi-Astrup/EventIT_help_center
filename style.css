@@ -2,7 +2,7 @@
 /***** Normalize.css *****/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 html {
   line-height: 1.15;
@@ -21,7 +21,7 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 hr {
@@ -87,7 +87,7 @@ optgroup,
 select,
 textarea {
   /*font-family: inherit;*/
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 
   font-size: 100%;
   line-height: 1.15;
@@ -316,7 +316,7 @@ a:focus {
   width: 100%;
   margin: 0 auto;
   padding: 0 5%;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 @media (min-width: 1160px) {
   .container {
@@ -513,8 +513,8 @@ ul {
 .section-subscribe button.button-primary:active,
 .section-subscribe button[data-selected="true"]:active,
 .split-button button.button-primary:active {
-  background-color: darken($brand_color, 20%);
-  border-color: darken($brand_color, 20%);
+  background-color: $brand_color;
+  border-color: $brand_color;
 }
 .button[data-disabled],
 [data-disabled].pagination-next-link,
@@ -1145,8 +1145,8 @@ ul {
     width: 90%;
   }
   .footer {
-  padding: 60px 0 40px 0;
-}
+    padding: 60px 0 40px 0;
+  }
 }
 .footer-language-selector button {
   color: $brand_color;
@@ -1191,6 +1191,10 @@ ul {
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
+  .footer {
+    padding-top: 0;
+    margin-top: 50px;
+  }
   .footer-links {
     display: flex;
     flex-direction: column;
@@ -1283,12 +1287,14 @@ ul {
 
 .toc-container {
   max-width: 25%;
+  position: sticky;
+  overflow-y: auto;
 }
 
 .toc-mobile-bar {
   display: none;
   position: sticky;
-  top: 0;
+  top: 20px;
   z-index: 999;
   background: white;
   border-bottom: 1px solid #eee;
@@ -1296,6 +1302,7 @@ ul {
 
 .toc-mobile-toggle {
   width: 100%;
+  top: 20px;
   padding: 14px 16px;
   font-size: 16px;
   border: none;
@@ -1371,6 +1378,7 @@ ul {
 /***** Search field *****/
 .search-container {
   position: relative;
+  width: 100%;
 }
 
 .search {
@@ -1491,7 +1499,7 @@ ul {
   z-index: 1;
   width: 18px;
   height: 18px;
-  color: #777;
+  color: $brand_color;
   pointer-events: none;
 }
 [dir="rtl"] .search-icon {
@@ -1511,8 +1519,8 @@ ul {
 }
 @media (min-width: 1024px) {
   .hero {
-  height: 300px;
-}
+    height: 300px;
+  }
 }
 .hero-inner {
   position: relative;
@@ -1527,7 +1535,6 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 10px 0;
 }
 @media (min-width: 768px) {
   .page-header {
@@ -1547,10 +1554,7 @@ ul {
     margin-bottom: 0;
   }
 }
-.page-header h1 {
-  flex-grow: 1;
-  margin-bottom: 10px;
-}
+
 .page-header-description {
   font-style: italic;
   margin: 0 0 30px 0;
@@ -1576,7 +1580,7 @@ ul {
   flex-wrap: wrap;
   gap: 15px 30px;
   justify-content: space-between;
-  margin-bottom: 55px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .sub-nav {
@@ -1606,7 +1610,7 @@ ul {
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
-  padding: 15px;
+  padding: 0 15px 0 15px;
 }
 @media (min-width: 768px) {
   .blocks-list {
@@ -1982,6 +1986,7 @@ ul {
   flex: 1;
   max-width: 100%;
 }
+
 @media (min-width: 1024px) {
   .category-content {
     flex: 0 0 80%;
@@ -1994,6 +1999,7 @@ ul {
   flex-wrap: wrap;
   justify-content: left;
   column-gap: 40px;
+  margin-top: 30px;
 }
 @media (min-width: 768px) {
   .section-tree {
@@ -2068,7 +2074,6 @@ ul {
     text-decoration: underline;
   }
 }
-
 
 /* Mobile-specific styling for the category list to match the design */
 @media (max-width: 767px) {
