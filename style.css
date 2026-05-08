@@ -196,8 +196,7 @@ template {
 body {
   background-color: $background_color;
   color: $text_color;
-  /*font-family: $text_font;*/
-    font-family: 'Montserrat', sans-serif;
+  font-family: $text_font;
 
   font-size: 15px;
   line-height: 1.5;
@@ -216,9 +215,7 @@ h3,
 h4,
 h5,
 h6 {
-  /*font-family: $heading_font;*/
-    font-family: 'Montserrat', sans-serif;
-
+  font-family: $heading_font;
   margin-top: 0;
 }
 
