@@ -205,10 +205,10 @@ body {
 @media (min-width: 1024px) {
   body > main {
     min-height: 65vh;
-    font-size: 18px;
+    font-size: 17px;
   }
   a {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
