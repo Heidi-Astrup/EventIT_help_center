@@ -207,6 +207,9 @@ body {
     min-height: 65vh;
     font-size: 18px;
   }
+  a {
+    font-size: 18px;
+  }
 }
 
 h1,
@@ -1759,7 +1762,7 @@ ul {
 
 /***** Promoted articles *****/
 .articles {
-  background-color: #d9d9d9;
+  background-color: $grey_color;
   width: 100%;
   left: 0;
   padding: 4% 5%;
@@ -1770,6 +1773,8 @@ ul {
 .promoted-articles {
   column-count: 1;
   column-gap: 0;
+  list-style-type: disc;
+  padding-left: 30px;
 }
 
 .recent-articles {
@@ -1803,11 +1808,11 @@ ul {
 /* Desktop: 2 kolonner */
 @media (min-width: 1024px) {
   .promoted-articles {
-    column-count: 2;
+    column-count: 1;
   }
 
   .recent-articles ul {
-    column-count: 2;
+    column-count: 1;
   }
 
   .recent-articles li {
@@ -2033,6 +2038,11 @@ ul {
   padding: 15px 0;
 }
 
+#article-list {
+  column-count: 1;
+  column-gap: 0;
+}
+
 .article-list-item {
   font-size: 16px;
   padding: 15px 0;
@@ -2045,6 +2055,11 @@ ul {
 }
 
 @media (min-width: 1024px) {
+  #article-list {
+  column-count: 2;
+  column-gap: 30px;
+  }
+
   .article-list-item a {
     text-decoration: none;
   }
@@ -2123,7 +2138,7 @@ ul {
 
 /***** Section pages *****/
 .section-container {
-  display: flex;
+  /*display: flex;*/
   /*justify-content: flex-end;*/
 }
 .section-content {
