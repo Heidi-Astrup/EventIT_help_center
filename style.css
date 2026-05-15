@@ -5500,6 +5500,9 @@ zd-summary-block {
   cursor: pointer;
   margin: 0;
   font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .accordion-content {
@@ -5513,13 +5516,6 @@ zd-summary-block {
 .accordion-item.open p {
   margin-top: 10px;
   margin-bottom: 0px;
-}
-
-.accordion-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
 }
 
 .accordion-icon {

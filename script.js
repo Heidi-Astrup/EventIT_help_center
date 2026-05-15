@@ -858,7 +858,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content.classList.add("accordion-content");
 
       title.addEventListener("click", () => {
-        // 🔥 luk alle andre
+        // luk alle andre
         document.querySelectorAll(".accordion-item").forEach((item) => {
           if (item !== wrapper) {
             item.classList.remove("open");
@@ -873,7 +873,7 @@ document.addEventListener("DOMContentLoaded", function () {
       wrapper.appendChild(content);
       container.appendChild(wrapper);
 
-      currentItem = content; // <- vi “tracker” nuværende korrekt
+      currentItem = content;
     } else if (currentItem) {
       currentItem.appendChild(el.cloneNode(true));
     }
