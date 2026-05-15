@@ -1783,16 +1783,19 @@ ul {
 
 .recent-articles {
   background-color: $grey_color;
+  width: 100%;
   padding: 4% 5%;
+  left: 0;
+  position: relative;
 }
 
 .recent-articles ul {
+  padding-top: 15px;
+  padding-left: 30px;
   column-count: 1;
   column-gap: 40px;
-  list-style: none;
+  list-style-type: disc;
   margin: 0;
-  padding: 0;
-  padding-top: 18px;
 }
 /* Items */
 .promoted-articles-item {
@@ -2063,7 +2066,7 @@ ul {
 
 @media (min-width: 1024px) {
   #article-list {
-  column-count: 2;
+    column-count: 2;
   }
 
   .article-list-item a {
