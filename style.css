@@ -1311,6 +1311,10 @@ ul {
   border-bottom: 1px solid #eee;
 }
 
+h2, h3 {
+  scroll-margin-top: 10%;
+}
+
 .toc-mobile-toggle {
   width: 100%;
   top: 20px;
@@ -1361,6 +1365,9 @@ ul {
 
   .toc-mobile-content li {
     margin-top: 15px;
+  }
+  h2, h3 {
+    scroll-margin-top: 200px;
   }
 }
 
