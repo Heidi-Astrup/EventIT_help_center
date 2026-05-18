@@ -1220,7 +1220,7 @@ ul {
   }
   .footer-social div {
     display: flex;
-    gap: 10%;
+    gap: 20px;
     max-width: 200px;
     justify-content: center;
   }
