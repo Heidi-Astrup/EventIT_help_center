@@ -1189,10 +1189,7 @@ ul {
   align-items: center;
   gap: 10px;
 }
-.footer-social div {
-  display: flex;
-  gap: 10px;
-}
+
 
 .footer-social img {
   max-width: 50px;
@@ -1221,7 +1218,14 @@ ul {
   .footer-social {
     flex-direction: column;
   }
+  .footer-social div {
+    display: flex;
+    gap: 10%;
+    max-width: 200px;
+    justify-content: center;
+  }
 }
+
 .follow-label {
   color: $brand_text_color;
   margin-right: 8px;
