@@ -1220,9 +1220,8 @@ ul {
   }
   .footer-social div {
     display: flex;
-    gap: 20px;
-    max-width: 200px;
-    justify-content: center;
+    width: 150px;
+    justify-content: space-between;
   }
 }
 
