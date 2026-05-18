@@ -178,6 +178,7 @@
       if (this.isExpanded) return;
 
       this.toggle.setAttribute("aria-expanded", "true");
+      this.handleOverflow();
     },
 
     handleOverflow: function () {
